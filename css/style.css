@@ -49,7 +49,8 @@ section#champions {
 .card {
   display: flex;
   align-items: flex-end;
-  padding: 3px;
+  justify-content: center;
+  padding-bottom: 10px;
   width: 250px;
   height: 300px;
   margin: 15px;
@@ -59,5 +60,5 @@ section#champions {
 
 footer {
   justify-content: center;
-  color: #333;
+  color: #000;
 }
