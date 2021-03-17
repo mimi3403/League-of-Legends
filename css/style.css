@@ -8,7 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #000;
+  /* background-color: #000; */
 }
 
 header,
@@ -20,7 +20,6 @@ footer {
 
 header {
   padding-left: 15px;
-  background-color: #000;
   height: 80px;
   color: #f4f4f4;
   /* box-shadow: 5px 10px 18px #808080; */
@@ -29,8 +28,7 @@ header {
 .logo {
   display: block;
   margin: 280px auto 100px auto;
-  /* margin-left: auto;
-  margin-right: auto; */
+  max-width: fit-content;
   width: 50%;
 
 }
@@ -39,7 +37,27 @@ main {
   flex-grow: 1;
 }
 
+section#champions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 200px auto 0 auto;
+  width: 1500px;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  align-items: flex-end;
+  padding: 3px;
+  width: 250px;
+  height: 300px;
+  margin: 15px;
+  border-radius: 7px;
+  border: 3px solid #000;
+}
+
 footer {
   justify-content: center;
-  color: #f4f4f4;
+  color: #333;
 }
