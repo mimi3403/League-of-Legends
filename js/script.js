@@ -1,8 +1,10 @@
-// constant variables - data that never changes
+ // constant variables - data that never changes
 const BASE_URL =
- 'http://ddragon.leagueoflegends.com/cdn/10.4.1/data/en_US/champion.json';
+'http://ddragon.leagueoflegends.com/cdn/10.4.1/data/en_US/champion.json';
 
- const skinUrl = 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/';
+const SKIN_URL = 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/';
+
+const SKILL_URL = 'http://ddragon.leagueoflegends.com/cdn/10.5.1/img/spell/';
 
 // state variables - data that changes
 let championName;
@@ -16,28 +18,29 @@ let $champions = $('#champions');
 init();
 
 function init() {
- getData();
+getData();
 }
 
 function getData() {
- $.ajax(BASE_URL).then(
-  function (data) {
-   let championName = Object.entries(data.data);
-   render(championName);
-  },
-  function (error) {
-   console.log(error);
-  },
- );
+$.ajax(BASE_URL).then(
+ function (data) {
+  let championName = Object.entries(data.data);
+  render(championName);
+ },
+ function (error) {
+  console.log(error);
+ },
+);
 }
 
 function render(championName) {
- const html = championName.map(function (champion) {
-  return `
-      <article class="card">
-        <h1>${champion[0]}</h1>
-      </article>
-      `;
- });
- $champions.append(html);
+const html = championName.map(function (champion) {
+ return `
+     <article class="card">
+   <h1>${champion[0]}</h1>
+   <img src=${SKIN_URL}${champion[0]}_0.jpg alt="skin">
+     </article>
+     `;
+});
+$champions.append(html);
 }

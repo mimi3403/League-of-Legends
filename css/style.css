@@ -8,7 +8,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  /* background-color: #000; */
+  background-color: #000;
+  color: #f4f4f4;
 }
 
 header,
@@ -21,15 +22,15 @@ footer {
 header {
   padding-left: 15px;
   height: 80px;
-  color: #f4f4f4;
   /* box-shadow: 5px 10px 18px #808080; */
 }
 
 .logo {
   display: block;
-  margin: 280px auto 100px auto;
+  margin: 350px auto 110px auto;
   max-width: fit-content;
-  width: 50%;
+  width: 400px;
+  height: auto;
 
 }
 
@@ -41,21 +42,31 @@ section#champions {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 200px auto 0 auto;
+  margin: 250px auto 0 auto;
   width: 1500px;
   flex-wrap: wrap;
 }
 
 .card {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
   padding-bottom: 10px;
+  width: 350px;
+  height: 350px;
+  margin: 5px;
+  /* border: 3px solid #333; */
+}
+
+img {
   width: 250px;
-  height: 300px;
-  margin: 15px;
-  border-radius: 7px;
-  border: 3px solid #000;
+  height: 200px;
+  margin: 20px;
+  /* object-fit: contain; */
+
+  /* max-width: 100%; */
+
 }
 
 footer {
