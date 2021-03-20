@@ -12,6 +12,8 @@ A simple web application that shows LOL Champions. 🔥
 ## Wireframes/Screenshots
 ![wireframe](./images/wireframe.png)
 
+![final-look](./images/final-look.png)
+
 ## Getting Started
 [Click here](#) to get started
 

@@ -19,11 +19,6 @@ footer {
   height: 50px;
 }
 
-header {
-  padding-left: 15px;
-  height: 80px;
-}
-
 .logo {
   display: block;
   margin: 350px auto 110px auto;
@@ -55,7 +50,7 @@ section#champions {
   width: 350px;
   height: 350px;
   margin: 5px;
-  /* border: 3px solid #333; */
+  font-size: 20px;
 }
 
 img {
@@ -63,8 +58,10 @@ img {
   height: 300px;
   margin: 20px;
   object-fit: cover
-    /* max-width: 100%; */
+}
 
+img:hover {
+  opacity: 0.6;
 }
 
 footer {
