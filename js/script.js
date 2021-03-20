@@ -4,7 +4,6 @@ const BASE_URL =
 
 const SKIN_URL = 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/';
 
-const SKILL_URL = 'http://ddragon.leagueoflegends.com/cdn/10.5.1/img/spell/';
 
 // state variables - data that changes
 let championName;
@@ -13,6 +12,7 @@ let championName;
 let $champions = $('#champions');
 
 // event listeners - capture and respond to events i.e user clicks on something
+$champions.on("click", ".card", handleShowModal);
 
 // functions
 init();
@@ -21,11 +21,39 @@ function init() {
 getData();
 }
 
+
+function handleShowModal(event) {
+  // console.log(this.dataset.championName)
+
+  let selectedChampion = this.dataset.championName
+  console.log(event.target.tagName)
+//   console.log( championName[1][0])
+  const selectedChampionName = championName.find(function(champion) { 
+  return champion[1].name === selectedChampion;
+});
+
+console.log(selectedChampionName)
+
+$("#title").text(selectedChampionName[1].title);
+$("#tags").text(selectedChampionName[1].tags);
+$("#blurb").text(selectedChampionName[1].blurb);
+$("#skin").attr({
+  src:`${SKIN_URL}${selectedChampion}_1.jpg`,
+  alt: "skin"
+})
+if($(event.target).is("img")) {
+  $('.modal').modal();
+} else {
+  return;
+}}
+
+
 function getData() {
 $.ajax(BASE_URL).then(
  function (data) {
-  let championName = Object.entries(data.data);
-  render(championName);
+  championName = Object.entries(data.data);
+  console.log(championName)
+  render();
  },
  function (error) {
   console.log(error);
@@ -33,12 +61,14 @@ $.ajax(BASE_URL).then(
 );
 }
 
-function render(championName) {
+
+
+function render() {
 const html = championName.map(function (champion) {
  return `
-     <article class="card">
+     <article data-champion-name="${champion[0]}" class="card">
    <h1>${champion[0]}</h1>
-   <img src=${SKIN_URL}${champion[0]}_0.jpg alt="skin">
+   <img class="img" src=${SKIN_URL}${champion[0]}_0.jpg alt="skin">
      </article>
      `;
 });
