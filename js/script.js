@@ -1,8 +1,8 @@
  // constant variables - data that never changes
 const BASE_URL =
-'http://ddragon.leagueoflegends.com/cdn/10.4.1/data/en_US/champion.json';
+'https://ddragon.leagueoflegends.com/cdn/10.4.1/data/en_US/champion.json';
 
-const SKIN_URL = 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/';
+const SKIN_URL = 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/';
 
 
 // state variables - data that changes
@@ -30,8 +30,6 @@ function handleShowModal() {
   return champion[1].name === selectedChampion;
 });
 
-console.log(selectedChampionName)
-
 $("#title").text(selectedChampionName[1].title);
 $("#tags").text(selectedChampionName[1].tags);
 $("#blurb").text(selectedChampionName[1].blurb);
@@ -47,7 +45,7 @@ function getData() {
 $.ajax(BASE_URL).then(
  function (data) {
   championName = Object.entries(data.data);
-  console.log(championName)
+  // console.log(championName)
   render();
  },
  function (error) {
