@@ -15,7 +15,7 @@ A simple web application that shows LOL Champions. 🔥
 ![final-look](./images/final-look.png)
 
 ## Getting Started
-[Click here](#) to get started
+[Click here](https://mimi3403.github.io/League-of-Legends/) to get started
 
 ## Future Enhancements
-TBD
+I would like to add a Search Bar to my app so that the users could search for whichever champion that they wouldl like to check. 

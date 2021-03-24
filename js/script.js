@@ -1,15 +1,15 @@
  // constant variables - data that never changes
 const BASE_URL =
-'https://ddragon.leagueoflegends.com/cdn/10.4.1/data/en_US/champion.json';
+"https://ddragon.leagueoflegends.com/cdn/10.4.1/data/en_US/champion.json";
 
-const SKIN_URL = 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/';
+const SKIN_URL = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/";
 
 
 // state variables - data that changes
 let championName;
 
 // cached element references - parts of the dom we need to touch
-let $champions = $('#champions');
+let $champions = $("#champions");
 
 // event listeners - capture and respond to events i.e user clicks on something
 $champions.on("click", ".img", handleShowModal);
@@ -37,7 +37,7 @@ $("#skin").attr({
   src:`${SKIN_URL}${selectedChampion}_1.jpg`,
   alt: "skin"
 })
-  $('.modal').modal();
+  $(".modal").modal();
 }
 
 
